@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Área de Membros Premium - FormatRemot</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@700&display=swap"
+        rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        :root {
+            --primary: #0070f3;
+            --dark-bg: #0a0a0a;
+            --card-bg: #161616;
+            --text-main: #ffffff;
+            --text-muted: #a0a0a0;
+            --accent: #00d4ff;
+            --border: rgba(255, 255, 255, 0.1);
+            --glass: rgba(255, 255, 255, 0.05);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--dark-bg);
+            color: var(--text-main);
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 60px;
+            padding-bottom: 40px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .header h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            background: linear-gradient(to right, #ffffff, var(--primary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .header p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+        }
+
+        .module {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 40px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .module::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--primary);
+        }
+
+        .module-tag {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+        }
+
+        h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .lesson {
+            background: var(--glass);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 25px;
+            transition: 0.3s;
+        }
+
+        .lesson:hover {
+            border-color: var(--primary);
+            transform: translateX(5px);
+        }
+
+        h3 {
+            color: var(--primary);
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .copy-box {
+            background: #000;
+            border: 1px dashed var(--border);
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 15px;
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            position: relative;
+        }
+
+        .copy-box strong {
+            color: var(--text-main);
+        }
+
+        .badge-important {
+            background: #ff4757;
+            color: white;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            margin-right: 5px;
+        }
+
+        .download-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--primary);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 20px;
+        }
+
+        ul {
+            list-style: none;
+            margin-top: 15px;
+        }
+
+        li {
+            margin-bottom: 10px;
+            padding-left: 25px;
+            position: relative;
+            color: var(--text-muted);
+        }
+
+        .video-container {
+            max-width: 100%;
+            margin-top: 20px;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--border);
+            background: #000;
+        }
+
+        .video-container video {
+            width: 100%;
+            display: block;
+        }
+
+        .notice-box {
+            background: rgba(255, 71, 87, 0.1);
+            border: 1px solid #ff4757;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 15px;
+            font-size: 0.9rem;
+            color: #ff4757;
+        }
+
+        .bonus-box {
+            background: rgba(0, 212, 255, 0.1);
+            border: 1px solid var(--accent);
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 15px;
+            color: var(--accent);
+        }
+
+        li::before {
+            content: '✓';
+            color: var(--primary);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Guia da Área de Membros</h1>
+            <p>Siga esta estrutura para entregar uma experiência premium aos seus clientes.</p>
+        </header>
+
+        <!-- Módulo 1 -->
+        <section class="module">
+            <span class="module-tag">Módulo 1</span>
+            <h2><i data-lucide="info"></i> Comece por aqui</h2>
+
+            <div class="lesson">
+                <h3><i data-lucide="play-circle"></i> Aula 1: Bem-vindo ao FormatRemot</h3>
+                <p>Instrução: Adicione o vídeo <strong>apresentacao_intro.mp4</strong> aqui.</p>
+                <div class="video-container">
+                    <video id="video-intro" controls poster="assets/Capturar.PNG">
+                        <source src="assets/apresentacao_intro.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="copy-box">
+                    <strong>Texto da aula:</strong><br>
+                    Seja bem-vindo ao <strong>FormatRemot</strong>!<br><br>
+                    Você acaba de adquirir a ferramenta que vai transformar sua rotina técnica. Assista ao vídeo
+                    informativo acima para ter uma visão geral de todas as ferramentas e entender como o sistema está
+                    organizado.
+                </div>
+            </div>
+
+            <div class="lesson">
+                <h3><i data-lucide="key"></i> Aula 2: Como ativar sua licença</h3>
+                <div class="copy-box">
+                    <span class="badge-important">IMPORTANTE</span> <strong>Leia antes de abrir o
+                        programa.</strong><br><br>
+                    Para utilizar o FormatRemot, siga estas regras simples:<br>
+                    - <strong>E-mail de Acesso:</strong> Use o mesmo e-mail da compra na Kiwify.<br>
+                    - <strong>Primeira Validação:</strong> Pode demorar alguns segundos.<br>
+                    - <strong>Segurança:</strong> Acesso revogado em caso de reembolso ou cancelamento.
+                </div>
+            </div>
+        </section>
+
+        <!-- Módulo 2 -->
+        <section class="module">
+            <span class="module-tag">Módulo 2</span>
+            <h2><i data-lucide="monitor"></i> FormatRemot na prática</h2>
+
+            <div class="lesson">
+                <h3><i data-lucide="video"></i> Aula 1: Formatação real na prática</h3>
+                <p>Instrução: Adicione o vídeo <strong>formatando_pratica.mp4</strong> aqui.</p>
+                <div class="video-container">
+                    <video id="video-pratica" controls poster="assets/Captuhhrar.PNG">
+                        <source src="assets/formatando_pratica.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="copy-box">
+                    <strong>Texto da aula:</strong><br>
+                    Veja neste vídeo como o <strong>FormatRemot</strong> se comporta em um cenário de uso real. Observe
+                    a agilidade na preparação do ambiente e na execução dos scripts.
+                </div>
+            </div>
+        </section>
+
+        <!-- Módulo 3 -->
+        <section class="module">
+            <span class="module-tag">Módulo 3</span>
+            <h2><i data-lucide="download-cloud"></i> Download e Entregáveis</h2>
+
+            <div class="lesson">
+                <h3><i data-lucide="file-down"></i> Aula 1: Download do Sistema</h3>
+                <p>Link oficial para download: <strong>Google Drive</strong></p>
+                <a href="https://drive.google.com/file/d/1kofXgDKPtgcuuP6EDhXdl5-gELswpz41/view?usp=drive_link"
+                    target="_blank" class="download-btn"><i data-lucide="download"></i> Baixar FormatRemot (Google
+                    Drive)</a>
+
+                <div class="notice-box">
+                    <strong>⚠️ AVISO SOBRE ANTIVÍRUS/DEFENDER:</strong><br>
+                    Por ser um utilitário técnico de sistema com funções avançadas de rede e scripts, o Windows Defender
+                    ou outros antivírus podem acusar um "Falso Positivo". Não se preocupe, o arquivo é 100% seguro.
+                    Recomendamos adicionar a pasta do programa às exclusões do seu antivírus para garantir o
+                    funcionamento pleno de todas as funções.
+                </div>
+
+                <ul>
+                    <li>Programa Portátil (~340MB)</li>
+                    <li>Arquivo: FormatRemot_Setup.exe</li>
+                    <li>Baixar em conexão estável</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Módulo 4: FAQ & Suporte -->
+        <section class="module">
+            <span class="module-tag">Módulo 4</span>
+            <h2><i data-lucide="help-circle"></i> Central de Ajuda & Suporte</h2>
+
+            <div class="lesson">
+                <h3><i data-lucide="message-square"></i> Aula 1: Como resolver problemas comuns</h3>
+                <div class="copy-box">
+                    <strong>Tópicos para a aula:</strong><br>
+                    - **E-mail não reconhecido:** Verifique se digitou o mesmo e-mail da compra.<br>
+                    - **Função Bloqueada:** Certifique-se de executar como Administrador.<br>
+                    - **Erro de Conexão:** O programa exige internet para a validação da licença.<br><br>
+                    Precisa de suporte humano? <strong>[Adicione aqui seu Link de WhatsApp/Telegram]</strong>
+                </div>
+            </div>
+        </section>
+
+        <!-- Módulo 5: Bônus -->
+        <section class="module">
+            <span class="module-tag">Módulo 5</span>
+            <h2><i data-lucide="gift"></i> Bônus de Lançamento</h2>
+
+            <div class="lesson">
+                <h3><i data-lucide="sparkles"></i> Pack de Ferramentas Turbo</h3>
+                <div class="bonus-box">
+                    <strong>🎁 Presente Exclusivo:</strong> Como agradecimento pela confiança, disponibilizamos Scripts
+                    de Otimização e Limpeza que você pode usar em conjunto com o FormatRemot.
+                </div>
+                <div class="copy-box">
+                    Instrução: Adicione aqui o link para o seu pacote de scripts bônus.
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            FormatRemot &copy; 2026 - Área de Membros Técnica
+        </footer>
+    </div>
+
+    <!-- Módulo de Testes/Diagnóstico -->
+    <div id="test-module"
+        style="position: fixed; bottom: 10px; right: 10px; background: rgba(0,0,0,0.9); color: #fff; padding: 15px; border-radius: 10px; z-index: 10000; font-family: monospace; font-size: 12px; border: 1px solid #0070f3; max-width: 300px;">
+        <h4 style="margin-bottom: 5px; color: #0070f3;">🧪 Diagnóstico de Assets</h4>
+        <div id="diag-intro">Vídeo Intro: Carregando...</div>
+        <div id="diag-pratica">Vídeo Prática: Carregando...</div>
+        <div id="diag-exe">Executável: Verificando...</div>
+    </div>
+
+    <script>
+        lucide.createIcons();
+
+        window.addEventListener('load', () => {
+            const intro = document.getElementById('video-intro');
+            const pratica = document.getElementById('video-pratica');
+            const diagIntro = document.getElementById('diag-intro');
+            const diagPratica = document.getElementById('diag-pratica');
+            const diagExe = document.getElementById('diag-exe');
+
+            function checkVideo(v, diag, name) {
+                if (v.readyState >= 1) {
+                    diag.innerHTML = `${name}: ✅ OK`;
+                } else {
+                    v.addEventListener('loadedmetadata', () => {
+                        diag.innerHTML = `${name}: ✅ OK`;
+                    });
+                    v.addEventListener('error', () => {
+                        diag.innerHTML = `${name}: ❌ ERRO`;
+                        diag.style.color = '#ff4757';
+                    });
+                }
+            }
+
+            checkVideo(intro, diagIntro, 'Vídeo Intro');
+            checkVideo(pratica, diagPratica, 'Vídeo Prática');
+
+            // Verificação de link externo (Google Drive)
+            const downloadLink = "https://drive.google.com/file/d/1kofXgDKPtgcuuP6EDhXdl5-gELswpz41/view?usp=drive_link";
+            if (downloadLink.includes("drive.google.com")) {
+                diagExe.innerHTML = 'Link Google Drive: ✅ PRONTO';
+            } else {
+                diagExe.innerHTML = 'Link Google Drive: ❌ PENDENTE';
+            }
+        });
+    </script>
+</body>
+
+</html>
